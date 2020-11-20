@@ -1,2 +1,6 @@
-<%@recipes.each { |recipe|%> <%=puts recipe.name%> <%}%>
-
+<ul>
+<% @recipes.each_with_index do |recipe, index| %>
+ <li><%= recipe.name %>: <%= recipe.description %> <a href="/delete/<%= index %>">Destroy</a></li>
+<% end %>
+</ul>
+<p><a href="/new">Create</a></p>
